@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Classroom Energy Saver MVP</title>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js"></script>
+</head>
+<body>
+  <h2>Smart Classroom Energy Saver MVP</h2>
+  <button onclick="simulatePresence()">Presence YES</button>
+  <button onclick="simulateNoPresence()">Presence NO</button>
+  <button onclick="turnLightOn()">Light ON</button>
+  <button onclick="turnLightOff()">Light OFF</button>
+  <button onclick="turnFanOn()">Fan ON</button>
+  <button onclick="turnFanOff()">Fan OFF</button>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT-default-rtdb.firebaseio.com",
+      projectId: "YOUR_PROJECT",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "1234567890",
+      appId: "1:123456789:web:xxxxxxxxxx"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    function simulatePresence() { db.ref("presence/room1").set("yes"); }
+    function simulateNoPresence() { db.ref("presence/room1").set("no"); }
+    function turnLightOn() { db.ref("rooms/room1/light").set("on"); }
+    function turnLightOff() { db.ref("rooms/room1/light").set("off"); }
+    function turnFanOn() { db.ref("rooms/room1/fan").set("on"); }
+    function turnFanOff() { db.ref("rooms/room1/fan").set("off"); }
+  </script>
+</body>
+</html>
