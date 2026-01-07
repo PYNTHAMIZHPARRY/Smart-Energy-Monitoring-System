@@ -36,7 +36,7 @@ Automated system using PIR sensors and Arduino to control appliances based on ro
 ![Firebase Dashboard](dashboard.png)
 
 ## 👥 Team
-*Team Power Tech* - Google Solution Challenge 2024
+*Team Power Tech* - Google Solution Challenge 2026
 
 ## 📄 License
 MIT License - See LICENSE file for details
